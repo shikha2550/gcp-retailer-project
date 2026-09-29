@@ -8,23 +8,23 @@ import json
 spark = SparkSession.builder.appName("supplierMySQLToLanding").getOrCreate()
 
 # Google Cloud Storage (GCS) Configuration variables
-GCS_BUCKET = "retailer-datalake-project-27032025"
-LANDING_PATH = f"gs://{GCS_BUCKET}/landing/supplier-db/"
-ARCHIVE_PATH = f"gs://{GCS_BUCKET}/landing/supplier-db/archive/"
+GCS_BUCKET = "retailer-datalake-project-09222026"
+LANDING_PATH = f"gs://{GCS_BUCKET}/landing/supplier_db/"
+ARCHIVE_PATH = f"gs://{GCS_BUCKET}/landing/supplier_db/archive/"
 CONFIG_FILE_PATH = f"gs://{GCS_BUCKET}/configs/supplier_config.csv"
 
 # BigQuery Configuration
-BQ_PROJECT = "avd-databricks-demo"
+BQ_PROJECT = "project-5cbb6c87-3559-4f84-b93"
 BQ_AUDIT_TABLE = f"{BQ_PROJECT}.temp_dataset.audit_log"
 BQ_LOG_TABLE = f"{BQ_PROJECT}.temp_dataset.pipeline_logs"
 BQ_TEMP_PATH = f"{GCS_BUCKET}/temp/"  
 
 # MySQL Configuration
 MYSQL_CONFIG = {
-    "url": "jdbc:mysql://34.57.241.120:3306/supplierDB?useSSL=false&allowPublicKeyRetrieval=true",
+    "url": "jdbc:mysql://34.55.206.202:3306/supplierDB?sslMode=REQUIRED",
     "driver": "com.mysql.cj.jdbc.Driver",
     "user": "myuser",
-    "password": "mypass"
+    "password": "Tanu@2550"
 }
 
 # Initialize GCS & BigQuery Clients
